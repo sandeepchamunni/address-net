@@ -1,3 +1,5 @@
 Flask==0.12.2
 Flask-Cors==3.0.3
 tensorflow==1.12
+textdistance==4.2.1
+numpy==1.19.5
