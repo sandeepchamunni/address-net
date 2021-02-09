@@ -1,4 +1,3 @@
-import spacy
 from flask import Flask, redirect, url_for, request
 from flask_cors import CORS, cross_origin
 #from addressnet.predict import predict_one
