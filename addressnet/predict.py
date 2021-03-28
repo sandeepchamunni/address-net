@@ -151,7 +151,7 @@ def predict(address: List[str], model_dir: str = None) -> List[Dict[str, str]]:
                 continue
             cls = class_names[class_id - 1]
             mappings[cls] = mappings.get(cls, "") + char
-
+        mappings['confidence_score'] = confidence_score
         if 'state' in mappings:
             mappings['state'] = normalise_state(mappings['state'])
         if 'street_type' in mappings:
