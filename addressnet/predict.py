@@ -139,6 +139,12 @@ def predict(address: List[str], model_dir: str = None) -> List[Dict[str, str]]:
     class_names = [l.replace("_code", "") for l in labels_list]
     class_names = [l.replace("_abbreviation", "") for l in class_names]
     for addr, res in zip(address, result):
+        #for sampleProbability in res['probabilities']:
+        #    print(sampleProbability)
+        probability_list = list(map(max,res['probabilities']))
+        confidence_score = min(probability_list)
+        print("Confidence score : ")
+        print(confidence_score)
         mappings = dict()
         for char, class_id in zip(addr.upper(), res['class_ids']):
             if class_id == 0:

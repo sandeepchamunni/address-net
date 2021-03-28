@@ -8,4 +8,4 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 @app.route("/extractaddress", methods=["GET","POST"])
 @cross_origin()
 def extractaddress():
-    return(str(predict_one(request.args.get('fulladdress'))))
+    return(str(predict_one(request.args.get('fulladdress'))) + "confidence score")
